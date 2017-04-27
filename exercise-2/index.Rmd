@@ -1,0 +1,26 @@
+---
+title: "Quakes"
+author: "Baochau Tran"
+date: "April 27, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(plotly)
+```
+
+This is a graph that about the locations of Earthquakes off Fiji
+
+```{r eval=TRUE}
+
+plot_ly(quakes, x = quakes$stations, y = quakes$mag, type = 'scatter') %>%
+  layout(title = 'location vs mag',
+         xaxis = list(title = 'location', zeroline = TRUE),
+          yaxis = list(title = 'mag'))
+
+```
+
+
+
+
